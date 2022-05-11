@@ -1,11 +1,11 @@
 
 class Customer:
 
-    num_of_customers = 0
+    num_of_customers: int = 0
 
     def __init__(self, first, last):
-        self.__first = first
-        self.__last = last
+        self.__first: str = first
+        self.__last: str = last
         Customer.num_of_customers += 1
 
     # class methods are Alternative Constructors, in this case: from a string divided by '-'
@@ -15,19 +15,19 @@ class Customer:
         return cls(first, last)
 
     @property
-    def first(self):
+    def first(self) -> str:
         return self.__first
 
     @first.setter
-    def first(self, value):
+    def first(self, value: str):
         self.__first = value
 
     @property
-    def last(self):
+    def last(self) -> str:
         return self.__last
 
     @last.setter
-    def last(self, value):
+    def last(self, value: str):
         self.__last = value
 
     @property
@@ -35,7 +35,7 @@ class Customer:
         return '{} {}'.format(self.first, self.last)
 
     @full_name.setter
-    def full_name(self, value):
+    def full_name(self, value: str):
         first, last = value.split(' ')
         self.__first = first
         self.__last = last

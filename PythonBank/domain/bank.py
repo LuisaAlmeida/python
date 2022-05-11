@@ -3,13 +3,13 @@ from managers.accountManager import AccountManager
 
 class Bank:
 
-    __total_customers = 0
-    __total_accounts = 0
+    __total_customers: int = 0
+    __total_accounts: int = 0
 
     def __init__(self, bank_name, customer: [Customer]):
-        self.__bank_name = bank_name
-        self.__customer = customer
-        self.__account_manager = AccountManager()
+        self.__bank_name: str = bank_name
+        self.__customer: Customer = customer
+        self.__account_manager: AccountManager = AccountManager()
         Bank.__total_customers += 1
 
     @classmethod
